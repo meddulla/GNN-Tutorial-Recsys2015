@@ -29,6 +29,7 @@ class YooChooseBinaryDataset(InMemoryDataset):
         data_list = []
 
         # process by session_id
+        df = df.sort_values(by=["timestamp"])
         grouped = df.groupby('session_id')
         for session_id, group in tqdm(grouped):
             sess_item_id = LabelEncoder().fit_transform(group.item_id)

@@ -46,7 +46,7 @@ def train_net(args):
     logger.info('init dataset...')
     # Custom dataloaders
     dataset = YooChooseBinaryDataset(root='data/')
-    dataset = dataset.shuffle()
+    #dataset = dataset.shuffle()
     train_dataset = dataset[:800000]
     val_dataset = dataset[800000:900000]
     test_dataset = dataset[900000:]
